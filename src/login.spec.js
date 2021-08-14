@@ -21,17 +21,17 @@ const mockResponseErrorWithoutCookie = {
 
 describe('(login.spec.js) - Login', () => {
   describe('getCookies()', () => {
-    test('It should return a string contain s% init of cookie', async () => {
+    test('Should return a string contain s% init of cookie', async () => {
       jest.spyOn(request, 'post').mockImplementationOnce(() => Promise.reject(mockResponseError))
       const result = await sut.getCookies()
       expect(result).toContain("s%")
     })
-    test('It should not be null', async () => {
+    test('Should not be null', async () => {
       jest.spyOn(request, 'post').mockImplementationOnce(() => Promise.reject(mockResponseError))
       const result = await sut.getCookies()
       expect(result).not.toBeNull()
     })
-    test('It should retry the action', async () => {
+    test('Should retry the action', async () => {
       jest.spyOn(request, 'post').mockImplementationOnce(() => Promise.reject(mockResponseErrorWithoutCookie))
       const result = await sut.getCookies()
       expect(result).toBeUndefined()
