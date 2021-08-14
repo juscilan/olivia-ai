@@ -1,0 +1,81 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script type='text/javascript'>
+  $.ajax({
+    url: "/stocks/alphabet",
+    type: 'GET',
+    dataType: 'json', // added data type
+    headers: {
+      'x-olivia-exam': 'alphabet-stock'
+    },
+    success: function (res) {
+      var trHTML = '';
+      if (res.yearlyFinancials) {
+        $.each(res.yearlyFinancials, function (i, item) {
+            trHTML += '<tr><td>' + item.year + '</td><td>' + item.equity + '</td><td>' + item.revenue + '</td><td>' + item.ebitda + '</td></tr>';
+        });
+        $('#financial').append(trHTML);
+      }
+    }
+  });
+</script>
+<h1>Alphabet data</h1>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td>Open</td>
+        <td>75.30</td>
+      </tr>
+      <tr>
+        <td>High</td>
+        <td>75.89</td>
+      </tr>
+      <tr>
+        <td>Low</td>
+        <td>74.54</td>
+      </tr>
+      <tr>
+        <td>Mkt cap</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>P/E ratio</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tbody>
+      <tr>
+        <td>Div yield</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Prev close</td>
+        <td>75.30</td>
+      </tr>
+      <tr>
+        <td>52-wk high</td>
+        <td>371.10</td>
+      </tr>
+      <tr>
+        <td>52-wk low</td>
+        <td>57.96</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Yearly Financial (Unstable API)</h2>
+<div >
+  <table id="financial">
+    <tr>
+        <th>Year</th>
+        <th>Equity</th>
+        <th>Revenue</th>
+        <th>EBITDA</th>
+    </tr>
+</table>
+</div>
+
+<a href="/logout">Log out</a>

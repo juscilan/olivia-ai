@@ -1,0 +1,19 @@
+{
+  "stock":"GOOG",
+  "IPO":"2004",
+  "industry":"Internet Content & Information",
+  "yearlyFinancials":[
+    {"year":"12/2016",
+      "equity":"19285",
+      "revenue":"135987",
+      "ebitda":"12492"},
+    {"year":"12/2017",
+      "equity":"27709",
+      "revenue":"177866",
+      "ebitda":"16132"},
+    {"year":"12/2018",
+      "equity":"43549",
+      "revenue":"232887",
+      "ebitda":"28019"}
+    ]
+  }
