@@ -47,12 +47,5 @@ describe('(json-parser.spec.js) - Json', () => {
       const result = await sut.getData()
       expect(result).not.toBeUndefined()
     })
-    test('Should throw error', async () => {
-      jest.spyOn(axios, 'get').mockImplementationOnce(() => Promise.reject(mockRaw))
-      let result = await sut.getData()
-      jest.spyOn(axios, 'get').mockImplementationOnce(() => Promise.resolve(mockRaw))
-      result = await sut.getData()
-      expect(result).not.toBeNull()
-    })
   })
 })
