@@ -37,8 +37,8 @@ describe('(html-parser.spec.js) - HTML', () => {
       expect(result).not.toBeNull()
     })
   })
-  describe('formatNumber Method', () => {
-    test('Should return a number', async () => {
+  describe('formatNumber()', () => {
+    test('Should return a value with number type', async () => {
       const result = await sut.formatNumber("78.90")
       expect(result).toBe(78.9)
     })
